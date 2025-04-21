@@ -1,23 +1,44 @@
-<style>
-    .click-btn {
-        background-color: red;
-        padding: 8px;
-        cursor: pointer;
-        margin: 50px 50px;
-        border-radius: 4px;
-    }
-
-    .click-btn:hover,
-    .click-btn:active {
-        background-color: brown;
-        color: white;
-    }
-</style>
-
-<span onclick="handleContinueClick();" class="click-btn">Click Here</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modijiurl Bypass</title>
+    <style>
+        .click-btn {
+            background-color: red;
+            padding: 8px;
+            cursor: pointer;
+            margin: 50px 50px;
+            border-radius: 4px;
+        }
+    
+        .click-btn:hover,
+        .click-btn:active {
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="handleContinueClick(event);">
+        <input name="url-input" type="text" id="url-input"><br>
+        <button type="submit" class="click-btn">Click Here</button>
+    </form>
+</body>
 <script>
-    function handleContinueClick() {
+    function handleContinueClick(event) {
+        event.preventDefault();
         console.log("clicked");
+        let inputUrl = document.getElementById("url-input").value.trim()
+        console.log(inputUrl);
+
+        const baseURL = "https://modijiurl.com/";
+
+        if (!inputUrl.startsWith(baseURL)) {
+            alert("❌ Provide valid URL");
+            return;
+        }
 
         let randomPostUrl = "https://shayarias.in/iphone-16-pro-major-camera-upgrades-and-ai-features-revealed/";
 
@@ -28,11 +49,13 @@
 
         let input = document.createElement("input");
         input.type = "hidden";
-        input.name = "newwpsafelink2";
-        input.value = "https://modijiurl.com/UPA0gH" // Send newwpsafelink1 as newwpsafelink2
+        input.name = "newwpsafelink2";  // Send newwpsafelink1 as newwpsafelink2
+        // input.value = "https://modijiurl.com/UPA0gH"
+        input.value = inputUrl
 
         form.appendChild(input);
         document.body.appendChild(form);
         form.submit();
     }
 </script>
+</html>
