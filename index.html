@@ -1,0 +1,38 @@
+<style>
+    .click-btn {
+        background-color: red;
+        padding: 8px;
+        cursor: pointer;
+        margin: 50px 50px;
+        border-radius: 4px;
+    }
+
+    .click-btn:hover,
+    .click-btn:active {
+        background-color: brown;
+        color: white;
+    }
+</style>
+
+<span onclick="handleContinueClick();" class="click-btn">Click Here</span>
+<script>
+    function handleContinueClick() {
+        console.log("clicked");
+
+        let randomPostUrl = "https://shayarias.in/iphone-16-pro-major-camera-upgrades-and-ai-features-revealed/";
+
+        // Create a hidden form to send POST request
+        let form = document.createElement("form");
+        form.method = "POST";
+        form.action = randomPostUrl;
+
+        let input = document.createElement("input");
+        input.type = "hidden";
+        input.name = "newwpsafelink2";
+        input.value = "https://modijiurl.com/UPA0gH" // Send newwpsafelink1 as newwpsafelink2
+
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+    }
+</script>
